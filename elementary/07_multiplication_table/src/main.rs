@@ -4,19 +4,16 @@ use std::io;
 // Write a program that prints a multiplication table for numbers up to 12.
 
 fn main() -> io::Result<()> {
-}
 
-#[cfg(test)]
-mod tests {
-    use crate::{compute_product, compute_sum};
+    const UP_TO: u32 = 12; 
 
-    #[test]
-    fn product() {
-        1
+    for i in 1..UP_TO {
+        print!("{0: <3}", i);
+        for j in 1..UP_TO {
+            print!(" {0: <3}", j*i);
+        }
+        print!("\n");
     }
 
-    #[test]
-    fn sum() {
-        1
-    }
+    Ok(())    
 }
